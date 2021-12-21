@@ -22,7 +22,7 @@ yearEl.textContent = currentYear;
 
 // Make mobile navigation work
 const btnNavEl = document.querySelector('.btn-mobile-nav');
-const headerEl = document.querySelector('header');
+const headerEl = document.querySelector('.header');
 
 btnNavEl.addEventListener('click', function () {
   headerEl.classList.toggle('nav-open');
@@ -38,7 +38,6 @@ allLinks.forEach(function (link) {
   link.addEventListener('click', function (e) {
     e.preventDefault();
     const href = link.getAttribute('href');
-    console.log(href);
 
     // Scroll back to top
     if (href === '#')
