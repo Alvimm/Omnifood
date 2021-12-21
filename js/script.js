@@ -26,11 +26,14 @@ const headerEl = document.querySelector('.header');
 
 btnNavEl.addEventListener('click', function () {
   headerEl.classList.toggle('nav-open');
+  document.body.style.position = 'fixed';
+  document.body.style.top = `-${window.scrollY}px`;
 });
 
 ///////////////////////////////////////////////////////////////////////////////////////
 
 // Smooth scrolling animation
+// const scrollY = document.body.style.top;
 
 const allLinks = document.querySelectorAll('a:link');
 
@@ -55,6 +58,18 @@ allLinks.forEach(function (link) {
     // Close mobile navigation
     if (link.classList.contains('main-nav-link'))
       headerEl.classList.toggle('nav-open');
+    document.body.style.position = '';
+    document.body.style.top = '';
+    window.scrollTo(0, parseInt(scrollY || '0') * -1);
+  });
+});
+
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth',
+    });
   });
 });
 ///////////////////////////////////////////////////////////////////////////////////////

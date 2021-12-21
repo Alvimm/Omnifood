@@ -162,6 +162,8 @@
     visibility: visible;
 
     transform: translateX(0);
+    height: 100vh;
+    overflow-y: hidden;
   }
 
   .nav-open .icon-mobile-nav[name='close-outline'] {

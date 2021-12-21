@@ -78,6 +78,11 @@ body {
   color: #555;
   /* Only works if there is nothing absolutely positioned in relation to body */
   overflow-x: hidden;
+
+  /* position: fixed; */
+  height: 100vh;
+  /* overflow-y: hidden; */
+  /* padding-right: 15px; */
 }
 
 /* *************************** */
